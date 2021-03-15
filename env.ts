@@ -1,17 +1,3 @@
-/*
-|--------------------------------------------------------------------------
-| Validating Environment Variables
-|--------------------------------------------------------------------------
-|
-| In this file we define the rules for validating environment variables.
-| By performing validation we ensure that your application is running in
-| a stable environment with correct configuration values.
-|
-| This file is read automatically by the framework during the boot lifecycle
-| and hence do not rename or move this file to a different location.
-|
-*/
-
 import Env from '@ioc:Adonis/Core/Env'
 
 export default Env.rules({
@@ -28,5 +14,12 @@ export default Env.rules({
   BULL_REDIS_HOST: Env.schema.string({ format: 'host' }),
   BULL_REDIS_PORT: Env.schema.number(),
   BULL_REDIS_PASSWORD: Env.schema.string.optional(),
-  CACHE_VIEWS: Env.schema.boolean()
+  CACHE_VIEWS: Env.schema.boolean(),
+  UNIMED_BASE_URL: Env.schema.string({ format: 'url' }),
+  INTERMED_BASE_URL: Env.schema.string({ format: 'url' }),
+  TOKEN_UNIMED: Env.schema.string.optional(),
+  TOKEN_INTERMED: Env.schema.string.optional(),
+  RESOLVE_USER: Env.schema.string(),
+  RESOLVE_PASSWORD: Env.schema.string(),
+  RESOLVE_ID: Env.schema.string(),
 })
